@@ -13,14 +13,15 @@ import org.springframework.web.client.RestTemplate;
  *
  *    Movie Info Resource Rest Controller
  *    http://localhost:8082/movies/anthony
+ *   http://localhost:8082/moviesMock/foo
  *
  *  * Movie Catalog Resource Rest Controller
  *  * http://localhost:8081/catalogResource/anthony
  *  * This will return [{"name":"Onward","desc":"Pixar movie that cameout 2020. Anthony Ku Ong gives it a rating of 4","rating":4}]
  */
 @RestController
-@RequestMapping("/movies")
-public class MovieResource {
+@RequestMapping("/moviesMock")
+public class MovieMockResource {
 
     @Value("${api.key}")
     private String apiKey;
@@ -30,8 +31,7 @@ public class MovieResource {
 
     @RequestMapping("/{movieId}")
     public Movie getMovieInfo(@PathVariable("movieId") String movieId) {
-        MovieSummary movieSummary = restTemplate.getForObject("https://api.themoviedb.org/3/movie/" + movieId + "?api_key=" +  apiKey, MovieSummary.class);
-        return new Movie(movieId, movieSummary.getTitle(), movieSummary.getOverview());
+         return new Movie("foo", "Onward", "Movie Overview");
 
     }
 

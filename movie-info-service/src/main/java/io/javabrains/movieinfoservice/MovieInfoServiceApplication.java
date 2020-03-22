@@ -10,6 +10,16 @@ import org.springframework.web.client.RestTemplate;
 @EnableEurekaClient
 public class MovieInfoServiceApplication {
 
+
+	/***
+	 * How to make a REST call from your code
+	 * Calling REST APIs programatically
+	 * Using a REST client library
+	 * Spring Boot comes with a Client already in your classpath - RestTemplate (will be deprecated)
+	 * WebClient (Reactive programming - using asynchronous ways of coding instead of synchronous way)
+	 *
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(MovieInfoServiceApplication.class, args);
 	}

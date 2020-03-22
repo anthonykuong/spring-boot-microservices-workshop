@@ -23,4 +23,9 @@ public class RatingsResource {
 
     }
 
+
+    @RequestMapping("/{movieId}")
+    public Rating getMockRating(@PathVariable("movieId") String movieId) {
+        return new Rating(movieId, 4);
+    }
 }
